@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        /* সাইডবার (ছবি অনুযায়ী গাঢ় বাদামী থিম) */
+        /* সাইডবার (ছবি অনুযায়ী গাঢ় বাদামী থিম) */
         .sidebar { background-color: #4a2e2b; min-height: 100vh; color: #fff; width: 230px; position: fixed; top: 0; left: 0; }
-        .sidebar .brand { background-color: #3b2321; padding: 15px; font-size: 16px; font-weight: bold; color: #fff; display: flex; align-items: center; }
+        .sidebar .brand { background-color: #3b2321; padding: 12px 15px; text-align: center; border-bottom: 1px solid #5c3935; }
         .sidebar a { color: #dcdcdc; text-decoration: none; padding: 10px 15px; display: block; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .sidebar a:hover, .sidebar a.active { background-color: #5c3935; color: #fff; }
         .sidebar a i { width: 22px; }
         
-        /* মেইন কন্টেন্ট এরিয়া */
+        /* মেইন কন্টেন্ট এরিয়া */
         .main-content { margin-left: 230px; }
         .top-navbar { background-color: #4a2e2b; color: white; padding: 8px 20px; border-bottom: 1px solid #6b433f; }
         
@@ -30,8 +30,9 @@
 
     <!-- সাইডবার মেনু -->
     <div class="sidebar">
+        <!-- লোগো যুক্ত করা হলো -->
         <div class="brand">
-            <span style="width: 8px; height: 8px; background: #48bb78; border-radius: 50%; display: inline-block;" class="me-2"></span> Sonali Traders
+            <img src="images/logo.jpeg" alt="Sonali Traders Logo" style="max-height: 45px; width: auto;">
         </div>
         <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
         <a href="#"><i class="fas fa-users"></i> User Management</a>
@@ -92,7 +93,7 @@
                 </div>
             </div>
 
-            <!-- দ্বিতীয় সারির কার্ড (Returns & Expense) -->
+            <!-- দ্বিতীয় সারির কার্ড (Returns & Expense) -->
             <div class="row g-3 mt-1">
                 <div class="col-md-4">
                     <div class="p-3 stat-card">

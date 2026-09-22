@@ -9,24 +9,21 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { background-color: #f4f6f9; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        /* সাইডবার স্টাইল (ছবির সাথে সামঞ্জস্যপূর্ণ) */
-        .sidebar { background-color: #2d3748; min-height: 100vh; color: #fff; width: 240px; position: fixed; }
-        .sidebar .brand { background-color: #1a202c; padding: 15px; font-size: 18px; font-weight: bold; color: #fff; }
-        .sidebar a { color: #cbd5e0; text-decoration: none; padding: 12px 15px; display: block; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .sidebar a:hover, .sidebar a.active { background-color: #4a5568; color: #fff; }
-        .sidebar a i { width: 25px; }
+        body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        /* সাইডবার (ছবি অনুযায়ী গাঢ় বাদামী থিম) */
+        .sidebar { background-color: #4a2e2b; min-height: 100vh; color: #fff; width: 230px; position: fixed; top: 0; left: 0; }
+        .sidebar .brand { background-color: #3b2321; padding: 15px; font-size: 16px; font-weight: bold; color: #fff; display: flex; align-items: center; }
+        .sidebar a { color: #dcdcdc; text-decoration: none; padding: 10px 15px; display: block; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .sidebar a:hover, .sidebar a.active { background-color: #5c3935; color: #fff; }
+        .sidebar a i { width: 22px; }
         
         /* মেইন কন্টেন্ট এরিয়া */
-        .main-content { margin-left: 240px; }
-        .top-navbar { background-color: #319795; color: white; padding: 10px 20px; }
+        .main-content { margin-left: 230px; }
+        .top-navbar { background-color: #4a2e2b; color: white; padding: 8px 20px; border-bottom: 1px solid #6b433f; }
         
-        /* কার্ড এবং স্ট্যাটস ডিজাইন */
-        .stat-card { border-left: 4px solid; background: #fff; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        .border-purchase { border-color: #3182ce !important; }
-        .border-sales { border-color: #38a169 !important; }
-        .border-due { border-color: #dd6b20 !important; }
-        .border-invoice { border-color: #0bc5ea !important; }
+        /* স্ট্যাটস কার্ডস */
+        .stat-card { background: #fff; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-top: none; }
+        .card-value { font-size: 20px; font-weight: bold; color: #2d3748; }
     </style>
 </head>
 <body>
@@ -34,7 +31,7 @@
     <!-- সাইডবার মেনু -->
     <div class="sidebar">
         <div class="brand">
-            <i class="fas fa-circle text-success me-2" style="font-size: 10px;"></i> Sonali Traders
+            <span style="width: 8px; height: 8px; background: #48bb78; border-radius: 50%; display: inline-block;" class="me-2"></span> Sonali Traders
         </div>
         <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
         <a href="#"><i class="fas fa-users"></i> User Management</a>
@@ -52,56 +49,78 @@
 
     <!-- মূল কন্টেন্ট -->
     <div class="main-content">
-        <!-- টপ বার -->
+        <!-- টপ বার ও মাল্টি-লোকেশন ড্রপডাউন -->
         <nav class="navbar top-navbar justify-content-between">
-            <span class="fw-bold">Welcome Sonali,</span>
+            <span class="fw-bold fs-5">Welcome Sonali,</span>
             <div class="d-flex align-items-center">
-                <!-- ৩টি দোকানের মাল্টি-লোকেশন ড্রপডাউন -->
                 <select class="form-select form-select-sm me-3" style="width: 280px;">
                     <option>মেসার্স সোনালী ট্রেডার্স (BL0001)</option>
                     <option>মেসার্স সোনালী ট্রেডার্স (গোদাম) (BL0002)</option>
                     <option>মেসার্স সোনালী ট্রেডার্স ইউনিট-০২ (BL0003)</option>
                 </select>
-                <span class="small"><i class="far fa-calendar-alt me-1"></i> 22-09-2026</span>
+                <span class="small bg-dark px-2 py-1 rounded text-white"><i class="far fa-calendar-alt me-1"></i> 22-09-2026</span>
             </div>
         </nav>
 
-        <!-- ড্যাশবোর্ড স্ট্যাটস কার্ডস -->
+        <!-- ড্যাশবোর্ড কার্ডস এবং গ্রাফ -->
         <div class="container-fluid p-4">
+            <!-- প্রথম সারির কার্ড (Purchase, Sales, Dues) -->
             <div class="row g-3">
                 <div class="col-md-3">
-                    <div class="p-3 stat-card border-purchase">
-                        <small class="text-muted fw-bold">TOTAL PURCHASE</small>
-                        <h4 class="fw-bold mb-0 mt-1">৳ 0.00</h4>
+                    <div class="p-3 stat-card">
+                        <small class="text-muted fw-bold d-block mb-1">TOTAL PURCHASE</small>
+                        <div class="card-value">৳ 0.00</div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="p-3 stat-card border-sales">
-                        <small class="text-muted fw-bold">TOTAL SALES</small>
-                        <h4 class="fw-bold mb-0 mt-1">৳ 0.00</h4>
+                    <div class="p-3 stat-card">
+                        <small class="text-muted fw-bold d-block mb-1">TOTAL SALES</small>
+                        <div class="card-value">৳ 0.00</div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="p-3 stat-card border-due">
-                        <small class="text-muted fw-bold">PURCHASE DUE</small>
-                        <h4 class="fw-bold mb-0 mt-1">৳ 0.00</h4>
+                    <div class="p-3 stat-card">
+                        <small class="text-muted fw-bold d-block mb-1">PURCHASE DUE</small>
+                        <div class="card-value">৳ 0.00</div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="p-3 stat-card border-invoice">
-                        <small class="text-muted fw-bold">INVOICE DUE</small>
-                        <h4 class="fw-bold mb-0 mt-1">৳ 0.00</h4>
+                    <div class="p-3 stat-card">
+                        <small class="text-muted fw-bold d-block mb-1">INVOICE DUE</small>
+                        <div class="card-value">৳ 0.00</div>
                     </div>
                 </div>
             </div>
 
-            <!-- সেলস গ্রাফ সেকশন (Sales Last 30 Days) -->
+            <!-- দ্বিতীয় সারির কার্ড (Returns & Expense) -->
+            <div class="row g-3 mt-1">
+                <div class="col-md-4">
+                    <div class="p-3 stat-card">
+                        <small class="text-muted fw-bold d-block mb-1">TOTAL PURCHASE RETURN</small>
+                        <div class="card-value">৳ 0.00</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 stat-card">
+                        <small class="text-muted fw-bold d-block mb-1">TOTAL SELL RETURN</small>
+                        <div class="card-value">৳ 0.00</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 stat-card">
+                        <small class="text-muted fw-bold d-block mb-1">EXPENSE</small>
+                        <div class="card-value">৳ 0.00</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- সেলস লাস্ট ৩০ ডেজ গ্রাফ সেকশন -->
             <div class="card mt-4 shadow-sm border-0">
                 <div class="card-body">
                     <h5 class="card-title text-secondary fw-bold">Sales Last 30 Days</h5>
                     <hr>
-                    <div style="height: 320px; display: flex; align-items: center; justify-content: center; background: #eaedf2; color: #4a5568; border-radius: 6px;">
-                        <span><i class="fas fa-chart-line fa-2x mb-2 d-text-center"></i><br>[ 30 Days Multi-Branch Sales Line Chart Component ]</span>
+                    <div style="height: 300px; display: flex; align-items: center; justify-content: center; background: #edf2f7; color: #718096; border-radius: 4px;">
+                        <span><i class="fas fa-chart-line fa-2x mb-2"></i><br>[ Multi-Branch Sales Trend Graph Area ]</span>
                     </div>
                 </div>
             </div>

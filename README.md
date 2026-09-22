@@ -1,2 +1,0 @@
-# Sonali-Traders-Inventory
-Inventory
